@@ -23,7 +23,6 @@ namespace MyFinance.Persistence.EntityTypeConfigurations
                 .HasMaxLength(250);
 
             builder.Property(t => t.Sum)
-                .IsRequired()
                 .HasPrecision(12, 2);
 
             builder.Property(t => t.DateOfCreation)
