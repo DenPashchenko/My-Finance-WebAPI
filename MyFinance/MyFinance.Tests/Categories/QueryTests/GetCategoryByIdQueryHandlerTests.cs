@@ -27,12 +27,12 @@ namespace MyFinance.Tests.Categories.QueryTests
             var result = await handler.Handle(
                 new GetCategoryByIdQuery
                 {
-                    CategoryId = id
+                    Id = id
                 },
                 CancellationToken.None);
 
             Assert.IsType<CategoryVm>(result);
-            Assert.Equal(id, result.CategoryId);
+            Assert.Equal(id, result.Id);
             Assert.Equal("Category1", result.Name);
         }
 
@@ -46,7 +46,7 @@ namespace MyFinance.Tests.Categories.QueryTests
                await handler.Handle(
                    new GetCategoryByIdQuery
                    {
-                       CategoryId = invalidId
+                       Id = invalidId
                    },
                    CancellationToken.None));
         }

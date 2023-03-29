@@ -12,7 +12,7 @@ using MyFinance.Persistence;
 namespace MyFinance.Persistence.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    [Migration("20230328060032_Initial")]
+    [Migration("20230329213713_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,18 +26,18 @@ namespace MyFinance.Persistence.Migrations
 
             modelBuilder.Entity("MyFinance.Domain.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
@@ -69,7 +69,8 @@ namespace MyFinance.Persistence.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("Sum")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<int>("TransactionType")
                         .HasColumnType("int");

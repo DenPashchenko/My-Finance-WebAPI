@@ -6,7 +6,7 @@ namespace MyFinance.Application.Categories.Queries.GetCategoryById
 {
     public class CategoryVm : IMapWith<Category>
     {
-        public int CategoryId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public void Mapping(Profile profile)

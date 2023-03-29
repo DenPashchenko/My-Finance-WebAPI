@@ -13,10 +13,10 @@ namespace MyFinance.Application.Categories.Commands.DeleteCategory
 
         public async Task Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
         {
-            var dbCategory = await _dataDbContext.Categories.FindAsync(request.CategoryId);
+            var dbCategory = await _dataDbContext.Categories.FindAsync(request.Id);
             if (dbCategory == null)
             {
-                throw new NotFoundException(nameof(Category), request.CategoryId);
+                throw new NotFoundException(nameof(Category), request.Id);
             }
             _dataDbContext.Categories.Remove(dbCategory);
             await _dataDbContext.SaveChangesAsync(cancellationToken);

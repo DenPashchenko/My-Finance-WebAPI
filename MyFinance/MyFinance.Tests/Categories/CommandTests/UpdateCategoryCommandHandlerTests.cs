@@ -17,14 +17,14 @@ namespace MyFinance.Tests.Categories.CommandTests
             await handler.Handle(
                 new UpdateCategoryCommand
                 {
-                    CategoryId = idToUpdate,
+                    Id = idToUpdate,
                     Name = categoryName,
                 },
                 CancellationToken.None);
 
             Assert.NotNull(await _context.Categories.SingleOrDefaultAsync(category => 
                 category.Name == categoryName &&
-                category.CategoryId == idToUpdate));
+                category.Id == idToUpdate));
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace MyFinance.Tests.Categories.CommandTests
                await handler.Handle(
                    new UpdateCategoryCommand
                    {
-                       CategoryId = invalidId,
+                       Id = invalidId,
                        Name = categoryName
                    },
                    CancellationToken.None));

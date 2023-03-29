@@ -19,10 +19,10 @@ namespace MyFinance.Application.Categories.Queries.GetCategoryById
 
         public async Task<CategoryVm> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
         {
-            var category = await _dataDbContext.Categories.FindAsync(request.CategoryId);
+            var category = await _dataDbContext.Categories.FindAsync(request.Id);
             if (category == null)
             {
-                throw new NotFoundException(nameof(Category), request.CategoryId);
+                throw new NotFoundException(nameof(Category), request.Id);
             }
 
             return _mapper.Map<CategoryVm>(category);

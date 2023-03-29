@@ -16,12 +16,12 @@ namespace MyFinance.Tests.Categories.CommandTests
             await handler.Handle(
                 new DeleteCategoryCommand
                 {
-                    CategoryId = idToDelete
+                    Id = idToDelete
                 },
                 CancellationToken.None);
 
             Assert.Null(await _context.Categories.SingleOrDefaultAsync(category =>
-                category.CategoryId == idToDelete));
+                category.Id == idToDelete));
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace MyFinance.Tests.Categories.CommandTests
                await handler.Handle(
                    new DeleteCategoryCommand
                    {
-                       CategoryId = invalidId
+                       Id = invalidId
                    },
                    CancellationToken.None));
         }

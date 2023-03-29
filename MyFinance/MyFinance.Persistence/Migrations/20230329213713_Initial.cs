@@ -13,13 +13,13 @@ namespace MyFinance.Persistence.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.CategoryId);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,7 +32,7 @@ namespace MyFinance.Persistence.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Sum = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Sum = table.Column<decimal>(type: "decimal(12,2)", precision: 12, scale: 2, nullable: false),
                     DateOfCreation = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateOfEditing = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -43,7 +43,7 @@ namespace MyFinance.Persistence.Migrations
                         name: "FK_Transactions_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "CategoryId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 

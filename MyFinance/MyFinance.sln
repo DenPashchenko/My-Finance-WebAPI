@@ -5,13 +5,17 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFinance.WebApi", "MyFinance.WebApi\MyFinance.WebApi.csproj", "{758C8E52-9DB8-4BC4-A36D-01A45AD81CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFinance.Domain", "MyFinance.Domain\MyFinance.Domain.csproj", "{124419A6-AB5E-468F-8215-53B60FE4EF36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFinance.Domain", "MyFinance.Domain\MyFinance.Domain.csproj", "{124419A6-AB5E-468F-8215-53B60FE4EF36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFinance.Application", "MyFinance.Application\MyFinance.Application.csproj", "{08F22A4E-F44E-46C3-8E71-3593E70D05AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFinance.Application", "MyFinance.Application\MyFinance.Application.csproj", "{08F22A4E-F44E-46C3-8E71-3593E70D05AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFinance.Persistence", "MyFinance.Persistence\MyFinance.Persistence.csproj", "{2B374BBC-DD94-4B6B-AE1F-ED7CA1189B41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFinance.Persistence", "MyFinance.Persistence\MyFinance.Persistence.csproj", "{2B374BBC-DD94-4B6B-AE1F-ED7CA1189B41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFinance.Tests", "MyFinance.Tests\MyFinance.Tests.csproj", "{B9E672E7-BAFF-4ACC-8FEA-F04DE27AAB5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFinance.Tests", "MyFinance.Tests\MyFinance.Tests.csproj", "{B9E672E7-BAFF-4ACC-8FEA-F04DE27AAB5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{035A55FF-FDF2-442F-B802-0B638B4AE42A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3A3BFD82-374E-4E0E-8AFB-BE4D4E78C416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +46,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{758C8E52-9DB8-4BC4-A36D-01A45AD81CB1} = {035A55FF-FDF2-442F-B802-0B638B4AE42A}
+		{124419A6-AB5E-468F-8215-53B60FE4EF36} = {035A55FF-FDF2-442F-B802-0B638B4AE42A}
+		{08F22A4E-F44E-46C3-8E71-3593E70D05AC} = {035A55FF-FDF2-442F-B802-0B638B4AE42A}
+		{2B374BBC-DD94-4B6B-AE1F-ED7CA1189B41} = {035A55FF-FDF2-442F-B802-0B638B4AE42A}
+		{B9E672E7-BAFF-4ACC-8FEA-F04DE27AAB5C} = {3A3BFD82-374E-4E0E-8AFB-BE4D4E78C416}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C566E26-B36E-4EA6-AA7B-7A221ABA1ADA}

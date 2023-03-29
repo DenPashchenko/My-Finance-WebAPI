@@ -41,7 +41,7 @@ namespace MyFinanceWebApi.Controllers
         {
             var query = new GetCategoryByIdQuery
             {
-                CategoryId = id
+                Id = id
             };
             var viewModel = await Mediator.Send(query);
             return Ok(viewModel);
@@ -58,7 +58,7 @@ namespace MyFinanceWebApi.Controllers
             var command = _mapper.Map<CreateCategoryCommand>(category);
             var viewModel = await Mediator.Send(command);
 
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = viewModel.CategoryId }, viewModel);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = viewModel.Id }, viewModel);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace MyFinanceWebApi.Controllers
         public async Task<IActionResult> UpdateAsync(int id, [FromBody] UpdateCategoryDto request)
         {
             var command = _mapper.Map<UpdateCategoryCommand>(request);
-            command.CategoryId = id;
+            command.Id = id;
             await Mediator.Send(command);
 
             return NoContent();
@@ -87,7 +87,7 @@ namespace MyFinanceWebApi.Controllers
         {
             var command = new DeleteCategoryCommand
             {
-                CategoryId = id
+                Id = id
             };
             await Mediator.Send(command);
 
