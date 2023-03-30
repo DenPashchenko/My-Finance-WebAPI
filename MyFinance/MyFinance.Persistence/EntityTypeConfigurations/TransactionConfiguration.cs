@@ -24,9 +24,6 @@ namespace MyFinance.Persistence.EntityTypeConfigurations
 
             builder.Property(t => t.Sum)
                 .HasPrecision(12, 2);
-
-            builder.Property(t => t.DateOfCreation)
-                .IsRequired();
         }
     }
 }

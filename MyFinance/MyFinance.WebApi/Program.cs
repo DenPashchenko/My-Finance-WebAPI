@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DataDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-         x => x.MigrationsAssembly("MyFinance.Persistence"));
+         x => x.MigrationsAssembly(typeof(DataDbContext).Assembly.FullName));
 });
 builder.Services.AddScoped<IDataDbContext, DataDbContext>();
 builder.Services.AddAutoMapper(config =>
