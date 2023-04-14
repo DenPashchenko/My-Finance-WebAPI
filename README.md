@@ -1,6 +1,4 @@
-# Task 12
-
-## MyFinance WebAPI
+# MyFinance WebAPI
 
 MyFinance is a .Net Core Backend for application of managing self finance (REST API).
 
