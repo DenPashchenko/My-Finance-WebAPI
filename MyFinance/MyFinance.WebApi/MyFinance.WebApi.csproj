@@ -6,7 +6,7 @@
 	  <NoWarn>$(NoWarn);1591</NoWarn>  
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>Foxmided-Pashchenko-task12</UserSecretsId>
+    
   </PropertyGroup>
 
   <ItemGroup>
