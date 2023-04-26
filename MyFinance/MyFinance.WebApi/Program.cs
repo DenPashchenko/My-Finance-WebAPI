@@ -41,6 +41,8 @@ builder.Services.AddSwaggerGen(config =>
 
 var app = builder.Build();
 
+app.UseRequestLocalization(localizationOptions);
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
