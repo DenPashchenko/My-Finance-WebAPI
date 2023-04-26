@@ -4,8 +4,18 @@ using MyFinance.Persistence;
 using MyFinance.Application.Common.Mappings;
 using MyFinance.Application.Interfaces;
 using MyFinance.WebApi.Middleware;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var defaultCulture = builder.Configuration.GetSection("Localization").GetValue<string>("DefaultCulture");
+var localizationOptions = new RequestLocalizationOptions()
+{
+	SupportedCultures = new List<CultureInfo> { new CultureInfo(defaultCulture) },
+	SupportedUICultures = new List<CultureInfo> { new CultureInfo(defaultCulture) },
+	DefaultRequestCulture = new RequestCulture(defaultCulture)
+};
 
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 builder.Services.AddControllers();
